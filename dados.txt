@@ -1,0 +1,32 @@
+HORA BASE
+8:00
+
+R$ BASE
+ R$ 2,300.00 
+
+DIAS TRAB
+20
+
+R$ DIA
+ R$ 115.00 
+
+R$ HORA
+ R$ 14.38 
+
+R$ HORA EXTRA
+ R$ 14.38 
+
+R$ HORA EXTRA(Valor Categoria)
+ R$ 14.38 
+
+R$ SALDO
+ R$ 2,314.38 
+
+
+O cálculo só é feito com término de cada turno. 		
+
+
+
+ Categoria	HORA BASE	R$ BASE
+Estagiário	6:00	 R$ 1,300.00 
+Funcionário	8:00	 R$ 2,300.00 
