@@ -33,3 +33,37 @@ DATA	    DIA	        1° TURNO		2° TURNO	HORAS	HORAS	 R$
 9/29/2023	sex	    8:00	12:00	13:00	17:00	8:00	00:00	 R$            0,00 
 9/30/2023	sáb	        -	    -	    -	    -	00:00	00:00	 R$            0,00 
 10/1/2023	dom	    8:00	12:00	13:00	18:00	9:00	1:00	 R$           14,38 
+
+DADOS RELACIONADOS A TABELA
+
+HORA BASE
+8:00
+
+R$ BASE
+ R$ 2,300.00 
+
+DIAS TRAB
+20
+
+R$ DIA
+ R$ 115.00 
+
+R$ HORA
+ R$ 14.38 
+
+R$ HORA EXTRA
+ R$ 14.38 
+
+R$ HORA EXTRA(Valor Categoria)
+ R$ 14.38 
+
+R$ SALDO
+ R$ 2,314.38 
+
+
+O cálculo só é feito com término de cada turno. 		
+
+
+Categoria	HORA BASE	R$ BASE
+Estagiário	6:00	 R$ 1,300.00 
+Funcionário	8:00	 R$ 2,300.00 
