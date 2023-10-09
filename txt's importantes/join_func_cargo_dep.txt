@@ -1,0 +1,4 @@
+SELECT *
+FROM FUNCIONARIO f
+JOIN DEPARTAMENTO d ON f.id_departamento_fk = d.id_departamento
+JOIN CARGO c ON f.id_cargo_fk = c.id_cargo;

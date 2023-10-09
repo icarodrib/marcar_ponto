@@ -1,0 +1,28 @@
+CREATE TABLE DEPARTAMENTO(
+id_departamento SERIAL PRIMARY KEY,
+nome_departamento VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE CARGO (
+id_cargo SERIAL PRIMARY KEY,
+nome_cargo VARCHAR(255) NOT NULL,
+salario_cargo NUMERIC(10,2) NOT NULL
+);
+
+CREATE TABLE FUNCIONARIO (
+id_funcionario SERIAL PRIMARY KEY,
+nome_funcionario VARCHAR(255) NOT NULL,
+cpf VARCHAR(11) NOT NULL,
+endereco VARCHAR(255),
+telefone VARCHAR(11),
+id_cargo_fk INT NOT NULL,
+id_departamento_fk INT NOT NULL,
+FOREIGN KEY (id_cargo_fk) REFERENCES CARGO (id_cargo),
+FOREIGN KEY (id_departamento_fk) REFERENCES DEPARTAMENTO (id_departamento)
+);
+
+CREATE TABLE BANCO_HORAS (
+id_funcionario SERIAL PRIMARY KEY,
+qtde_horas INT NOT NULL,
+FOREIGN KEY (id_funcionario) REFERENCES FUNCIONARIO(id_funcionario)
+);
