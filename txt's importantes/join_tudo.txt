@@ -1,0 +1,5 @@
+SELECT f.id_funcionario,f.nome_funcionario,f.cpf,f.endereco,f.telefone,c.*,d.*,b.qtde_horas
+FROM FUNCIONARIO f
+JOIN DEPARTAMENTO d ON f.id_departamento = d.id_departamento
+JOIN CARGO c ON f.id_cargo = c.id_cargo
+JOIN BANCO_HORAS b ON f.id_funcionario = b.id_funcionario

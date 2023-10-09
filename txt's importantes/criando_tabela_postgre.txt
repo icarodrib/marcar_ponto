@@ -15,10 +15,10 @@ nome_funcionario VARCHAR(255) NOT NULL,
 cpf VARCHAR(11) NOT NULL,
 endereco VARCHAR(255),
 telefone VARCHAR(11),
-id_cargo_fk INT NOT NULL,
-id_departamento_fk INT NOT NULL,
-FOREIGN KEY (id_cargo_fk) REFERENCES CARGO (id_cargo),
-FOREIGN KEY (id_departamento_fk) REFERENCES DEPARTAMENTO (id_departamento)
+id_cargo INT NOT NULL,
+id_departamento INT NOT NULL,
+FOREIGN KEY (id_cargo) REFERENCES CARGO (id_cargo),
+FOREIGN KEY (id_departamento) REFERENCES DEPARTAMENTO (id_departamento)
 );
 
 CREATE TABLE BANCO_HORAS (
