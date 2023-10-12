@@ -21,8 +21,10 @@ FOREIGN KEY (id_cargo) REFERENCES CARGO (id_cargo),
 FOREIGN KEY (id_departamento) REFERENCES DEPARTAMENTO (id_departamento)
 );
 
-CREATE TABLE BANCO_HORAS (
-id_funcionario SERIAL PRIMARY KEY,
-qtde_horas INT NOT NULL,
+CREATE TABLE PONTO (
+id_ponto SERIAL PRIMARY KEY,
+id_funcionario INT NOT NULL,
+data_hora TIMESTAMP NOT NULL,
+tipo CHAR(1) CHECK (tipo IN ('E','S')),
 FOREIGN KEY (id_funcionario) REFERENCES FUNCIONARIO(id_funcionario)
 );
