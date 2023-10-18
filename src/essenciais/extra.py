@@ -1,5 +1,5 @@
 # Import
-from conexão import *
+from essenciais.conexão import *
 import time
 import os
 

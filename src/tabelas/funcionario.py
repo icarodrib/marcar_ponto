@@ -22,8 +22,10 @@ def criarFuncionario(cur,conn):
 def verFuncionario(cur):
     cur.execute(f"SELECT * FROM funcionario")
     resultados = cur.fetchall()
+    i = 1
     for linha in resultados:
-        print(linha)
+        print(i,") ",linha)
+        i+=1
     x = input()
     if(x != None or x == None):
         None

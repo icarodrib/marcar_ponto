@@ -39,6 +39,7 @@ def fecharConexão(conn):
 def mostrarTabelas(cur):
     cur.execute("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';")
     resultados = cur.fetchall()
+    i = 1
     for linha in resultados:
-        i = len(resultados)
         print(i,") ",linha)
+        i+=1

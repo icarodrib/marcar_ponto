@@ -23,8 +23,10 @@ def criarCargo(cur,conn):
 def verCargo(cur):
     cur.execute(f"SELECT * FROM cargo")
     resultados = cur.fetchall()
+    i = 1
     for linha in resultados:
-        print(linha)
+        print(i,") ",linha)
+        i+=1
     x = input()
     if(x != None or x == None):
         None

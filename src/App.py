@@ -1,5 +1,5 @@
 """ from interface import * """
-from extra import *
+from essenciais.extra import *
 
 # Abrindo conexão com o banco de dados
 clear()
