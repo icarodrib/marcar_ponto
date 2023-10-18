@@ -1,31 +1,5 @@
-import tkinter as tk
-import psycopg2
-
-# Conectar-se ao banco de dados PostgreSQL
-conn = psycopg2.connect(
-    host = "127.0.0.1",
-    database = "e-enterprise",
-    user = "postgres",
-    password = "123"
-)
-cursor = conn.cursor()
-
-# Função para calcular horas trabalhadas e extras
-def calcular_horas():
-    id_funcionario = int(id_funcionario_entry.get())
-    data = data_entry.get()
-    hora_base = int(hora_base_entry.get())
-    
-    horas_trabalhadas = f"{int(horas_trabalhadas_entry1.get())}:{int(horas_trabalhadas_entry2.get())}:{int(horas_trabalhadas_entry3.get())}"
-
-    horas_extras = int(horas_trabalhadas_entry1.get()) - hora_base
-
-    # Inserir os dados no banco de dados
-    cursor.execute("INSERT INTO horas_trabalhadas (id_funcionario, data, hora_base, horas_trabalhadas, horas_extras) VALUES (%s, %s, %s, %s, %s)",
-                   (id_funcionario, data, hora_base, horas_trabalhadas, horas_extras))
-    conn.commit()
-
-    resultado_label.config(text=f"Horas trabalhadas: {horas_trabalhadas} horas\nHoras extras: {horas_extras} horas")
+""" import tkinter as tk
+from App import calcular_horas
 
 # Criar a janela principal
 root = tk.Tk()
@@ -66,7 +40,4 @@ calcular_button.pack()
 resultado_label.pack()
 
 # Iniciar a aplicação
-root.mainloop()
-
-# Fechar a conexão com o banco de dados quando a janela for fechada
-conn.close()
+root.mainloop() """
