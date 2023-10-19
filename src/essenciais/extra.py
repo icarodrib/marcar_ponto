@@ -12,11 +12,10 @@ def menuPrincipal():
 |  -  -  -  -  M E N U  -  -  -  -  |
 -------------------------------------
 |             O P Ç Õ E S           |
-| 1) Ver tabelas existentes         |
-| 2) Criar novo item em uma tabela  |
-| 3) Ver itens de uma tabela        |
-| 4) Modificar itens de uma tabela  |
-| 5) Deletar itens de uma tabela    |
+| 1) Ver Dados de uma Tabela        |
+| 2) Criar nova linha em uma tabela |
+| 3) Modificar Dados de uma Tabela  |
+| 4) Deletar itens de uma tabela    |
 | 0) Sair                           |
 -------------------------------------"""
     print(menu)
@@ -33,19 +32,8 @@ def menuTabelas():
 -------------------------"""
     print(menu)
 
-
-"""-------------------------------------
-|  -  -  -  -  M E N U  -  -  -  -  |
--------------------------------------
-|             O P Ç Õ E S           |
-| 1) Ver Dados de uma Tabela        |
-| 2) Criar nova linha em uma tabela |
-| 3) Modificar Dados de uma Tabela  |
-| 4) Deletar itens de uma tabela    |
-| 0) Sair                           |
--------------------------------------"""
-
-"""-------------------------
+def menuTabelas2():
+    menu = """-------------------------
 |  -  T A B E L A S  -  |
 -------------------------
 | Opções:               |
@@ -55,3 +43,5 @@ def menuTabelas():
 | 4) Banco de Horas     |
 | 0) Sair               |
 -------------------------"""
+    print(menu)
+

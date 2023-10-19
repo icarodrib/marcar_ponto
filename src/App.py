@@ -23,30 +23,69 @@ while(True):
     if(operacao == '0'):
         break
 
-    # Opção para ver todas as tabelas existentes dentro do banco de dados
-    elif(operacao == '1'):
+    # Escolhendo a tabela para efetuar operação de Ver ou Modificar
+    elif(operacao == '1' or operacao == '3'):
         while(True):
-            mostrarTabelas(cursor)
-            x = input()
-            if(x != None or x == None):
-                clear()
+            menuTabelas2()
+
+            if(operacao == '1'):
+                tabela = input("Ver os itens de qual tabela?\n(0-4): ")
+
+            elif(operacao == '3'):
+                tabela = input("Modificar itens de qual tabela?\n(0-4): ")
+
+            clear()
+#####################################################################################################
+        # Cancelando operacao escolhida e voltando para o menu principal
+            if(tabela == '0'):
                 break
+            
+        # VER INICIO
+            # DEPARTAMENTO
+            elif(operacao == '1' and tabela == '1'):
+                print("Departamentos:")
+                verDepartamento (cursor)
+                x = input()
+                if(x != None or x == None):
+                    None
+                clear()
+                
+            # CARGO
+            elif(operacao == '1' and tabela == '2'):
+                print("Cargos:")
+                verCargo(cursor)
+                x = input()
+                if(x != None or x == None):
+                    None
+                clear()
+
+            # FUNCIONARIO
+            elif(operacao == '1' and tabela == '3'):
+                print("Funcionarios:")
+                verFuncionario(cursor)
+                x = input()
+                if(x != None or x == None):
+                    None
+                clear()
+
+            elif(operacao == '1' and tabela == '4'):
+                print("Banco de Horas:")
+                ## verBancoDeHoras(cursor)
+                x = input()
+                if(x != None or x == None):
+                    None
+                clear()
+        # FIM VER
     
-    # Escolha de tabela para efetuar operação
-    elif(operacao == '2' or operacao == '3' or operacao == '4' or operacao == '5'):
+    # Escolhendo a tabela para efetuar operação de Criar ou Deletar
+    elif(operacao == '2'  or operacao == '4'):
         while(True):
             menuTabelas()
             # Aqui o usuario vai escolher a tabela para fazer a ação que havia escolhido
             if(operacao == '2'):
                 tabela = input("Criar um novo item em qual tabela?\n(0-3): ")
 
-            elif(operacao == '3'):
-                tabela = input("Ver os itens de qual tabela?\n(0-3): ")
-
             elif(operacao == '4'):
-                tabela = input("Modificar itens de qual tabela?\n(0-3): ")
-
-            elif(operacao == '5'):
                 tabela = input("Deletar itens de qual tabela?\n(0-3): ")
 
             clear()
@@ -69,29 +108,6 @@ while(True):
             elif(operacao == '2' and tabela == '3'):
                 print("Novo item em Funcionario")
         # FIM CRIAR
-
-        # VER INICIO
-            # DEPARTAMENTO
-            elif(operacao == '3' and tabela == '1'):
-                print("Itens em Departamento:")
-                verDepartamento (cursor)
-                x = input()
-                if(x != None or x == None):
-                    None
-                clear()
-                
-            # CARGO
-            elif(operacao == '3' and tabela == '2'):
-                print("Itens em Cargo:")
-                verCargo(cursor)
-                clear()
-
-            # FUNCIONARIO
-            elif(operacao == '3' and tabela == '3'):
-                print("Itens em Funcionario:")
-                verFuncionario(cursor)
-                clear()
-        # FIM VER
 
         # MODIFICAR INICIO
             # DEPARTAMENTO
