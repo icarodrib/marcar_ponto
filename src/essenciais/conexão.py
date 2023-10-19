@@ -1,8 +1,5 @@
 import psycopg2
-from tabelas.cargo import *
-from tabelas.departamento import *
-from tabelas.funcionario import *
-from tabelas.banco_horas import * 
+
 
 # Criamos a conexão entre o psycopg2 e o nosso banco de dados
 def abrirConexão():

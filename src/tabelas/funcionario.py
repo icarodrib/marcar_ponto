@@ -1,3 +1,5 @@
+from essenciais.extra import clear
+
 def criarFuncionario(cur,conn):
     
     # O nome do novo Funcionario é alocado em uma variavel
@@ -13,11 +15,14 @@ def criarFuncionario(cur,conn):
     # Se o usuario confirmar, damos commit na criação do novo Funcionario
     if(opcao == "sim" or opcao == "s" or opcao == "yes" or opcao == "y"):
         conn.commit()
+        clear()
         print(f"Funcionario {nome_funcionario} criado com sucesso!")
     
     # Se não, cancelamos a operação
     else:
-        print("Operação cancelada.")
+        conn.rollback()
+        clear()
+        print("*Operação cancelada.")
 
 def verFuncionario(cur):
     cur.execute(f"SELECT * FROM funcionario")

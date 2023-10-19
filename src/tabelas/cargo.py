@@ -1,7 +1,9 @@
+from essenciais.extra import clear
+
 def criarCargo(cur,conn):
     
     # O nome do novo cargo é alocado em uma variavel
-    nome_cargo = input("Digite o nome do depatamento: ")
+    nome_cargo = input("Digite o nome do cargo: ")
     salario_cargo = float(input("Digite o salario do cargo\nExemplo: $ 1200.00\n\n$ "))
     
     # Usando o cursor executamos o codigo de PostgreSQL para criação do novo cargo com o nome alocado na variavel
@@ -14,14 +16,17 @@ def criarCargo(cur,conn):
     # Se o usuario confirmar, damos commit na criação do novo cargo
     if(opcao == "sim" or opcao == "s" or opcao == "yes" or opcao == "y"):
         conn.commit()
+        clear()
         print(f"cargo {nome_cargo} criado com sucesso!")
     
     # Se não, cancelamos a operação
     else:
-        print("Operação cancelada.")
+        conn.rollback()
+        clear()
+        print("*Operação cancelada.")
 
 def verCargo(cur):
-    cur.execute(f"SELECT * FROM cargo")
+    cur.execute("SELECT * FROM cargo")
     resultados = cur.fetchall()
     i = 1
     for linha in resultados:
@@ -31,8 +36,15 @@ def verCargo(cur):
     if(x != None or x == None):
         None
 
-def modificarCargo(cur):
-    print("Modificiar cargo")
+    
+
+def modificarCargo(cur,conn,opcao):
+    
+    cur.execute("UPDATE cargo SET coluna = %s WHERE condicao = %s", (novo_valor, condicao))
+    conn.commit()  # Confirme as alterações
+    print("Atualização bem-sucedida!")
 
 def deletarCargo(cur):
-    print("Deletar cargo")
+    x = input("Digite o id do cargo que você deseja deletar: ")
+
+    cur.execute(f"DELETE FROM cargo WHERE id_cargo = {x};")

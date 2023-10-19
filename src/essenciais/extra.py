@@ -1,5 +1,4 @@
 # Import
-from essenciais.conexão import *
 import time
 import os
 
@@ -30,7 +29,29 @@ def menuTabelas():
 | 1) Departamento       |
 | 2) Cargo              |
 | 3) Funcionario        |
-| 4)                    |
 | 0) Sair               |
 -------------------------"""
     print(menu)
+
+
+"""-------------------------------------
+|  -  -  -  -  M E N U  -  -  -  -  |
+-------------------------------------
+|             O P Ç Õ E S           |
+| 1) Ver Dados de uma Tabela        |
+| 2) Criar nova linha em uma tabela |
+| 3) Modificar Dados de uma Tabela  |
+| 4) Deletar itens de uma tabela    |
+| 0) Sair                           |
+-------------------------------------"""
+
+"""-------------------------
+|  -  T A B E L A S  -  |
+-------------------------
+| Opções:               |
+| 1) Departamento       |
+| 2) Cargo              |
+| 3) Funcionario        |
+| 4) Banco de Horas     |
+| 0) Sair               |
+-------------------------"""

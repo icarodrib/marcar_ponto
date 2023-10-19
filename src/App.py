@@ -1,5 +1,9 @@
-""" from interface import * """
+from essenciais.conexão import *
 from essenciais.extra import *
+from tabelas.cargo import *
+from tabelas.departamento import *
+from tabelas.funcionario import *
+from tabelas.banco_horas import * 
 
 # Abrindo conexão com o banco de dados
 clear()
@@ -31,7 +35,6 @@ while(True):
     # Escolha de tabela para efetuar operação
     elif(operacao == '2' or operacao == '3' or operacao == '4' or operacao == '5'):
         while(True):
-            clear()
             menuTabelas()
             # Aqui o usuario vai escolher a tabela para fazer a ação que havia escolhido
             if(operacao == '2'):
@@ -56,11 +59,11 @@ while(True):
         # CRIAR INICIO
             # DEPARTAMENTO
             elif(operacao == '2' and tabela == '1'):
-                print("Novo item em Departamento")
+                criarDepartamento(cursor,conexão)
 
             # CARGO
             elif(operacao == '2' and tabela == '2'):
-                print("Novo item em Cargo")
+                criarCargo(cursor,conexão)
 
             # FUNCIONARIO
             elif(operacao == '2' and tabela == '3'):
@@ -72,16 +75,22 @@ while(True):
             elif(operacao == '3' and tabela == '1'):
                 print("Itens em Departamento:")
                 verDepartamento (cursor)
+                x = input()
+                if(x != None or x == None):
+                    None
+                clear()
                 
             # CARGO
             elif(operacao == '3' and tabela == '2'):
                 print("Itens em Cargo:")
                 verCargo(cursor)
+                clear()
 
             # FUNCIONARIO
             elif(operacao == '3' and tabela == '3'):
                 print("Itens em Funcionario:")
                 verFuncionario(cursor)
+                clear()
         # FIM VER
 
         # MODIFICAR INICIO
@@ -101,7 +110,7 @@ while(True):
         # DELETAR INICIO
             # DEPARTAMENTO
             elif(operacao == '5' and tabela == '1'):
-                print("Deletar itens em Departamento")
+                deletarDepartamento(cursor,conexão)
 
             # CARGO
             elif(operacao == '5' and tabela == '2'):
@@ -117,7 +126,7 @@ while(True):
 
     # Caso o usuario digite um valor invalido
     else:
-        print("*Opção invalida, por favor escolha uma opção valida.")
+        print("*Opção invalida, realocado para o menu principal")
 
 # Fechando conexão com o banco de dados e encerrando o programa
 clear()
