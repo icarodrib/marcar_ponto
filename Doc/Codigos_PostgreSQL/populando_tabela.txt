@@ -1,11 +1,64 @@
-INSERT INTO DEPARTAMENTO (nome_departamento)
+## Departamentos
+INSERT INTO departamentos (nome_departamento)
+VALUES ('administrativo');
+
+INSERT INTO departamentos (nome_departamento)
+VALUES ('financeiro');
+
+INSERT INTO departamentos (nome_departamento)
 VALUES ('RH');
 
-INSERT INTO CARGO (nome_cargo,salario_cargo)
-VALUES ('Gerente',6000);
+INSERT INTO departamentos (nome_departamento)
+VALUES ('comercial');
 
-INSERT INTO FUNCIONARIO (nome_funcionario,cpf,endereco,telefone,id_cargo,id_departamento)
-VALUES ('Carlos','11111111111','Rua Alguma coisa','21912345678',1,1);
+INSERT INTO departamentos (nome_departamento)
+VALUES ('TI');
 
-INSERT INTO PONTO (id_funcionario,data_hora,tipo)
-VALUES (1,'2023-8-23 09:00:00','E')
+INSERT INTO departamentos (nome_departamento)
+VALUES ('produção');
+
+INSERT INTO departamentos (nome_departamento)
+VALUES ('jurídico');
+
+
+
+
+## Cargos
+INSERT INTO cargos (nome_cargo,salario_cargo)
+VALUES ('Presidência',23531.16);
+
+INSERT INTO cargos (nome_cargo,salario_cargo)
+VALUES ('Diretoria',16513.89);
+
+INSERT INTO cargos (nome_cargo,salario_cargo)
+VALUES ('Gerência',11189.40);
+
+INSERT INTO cargos (nome_cargo,salario_cargo)
+VALUES ('Supervisão',7087.80);
+
+INSERT INTO cargos (nome_cargo,salario_cargo)
+VALUES ('Analista',5217.89);
+
+INSERT INTO cargos (nome_cargo,salario_cargo)
+VALUES ('Assistente',3621.52);
+
+INSERT INTO cargos (nome_cargo,salario_cargo)
+VALUES ('Auxiliar',1650.31);
+
+
+
+## Funcionarios
+INSERT INTO funcionarios (nome_funcionario,cpf,endereco,telefone,id_cargo,id_departamento)
+VALUES ('Lucas','00000101010','Avenida alguma coisa','2140028922',5,5);
+
+INSERT INTO funcionarios (nome_funcionario,cpf,endereco,telefone,id_cargo,id_departamento)
+VALUES ('Danilo','12345678900','Rua das flores','21912345678',3,4);
+
+INSERT INTO funcionarios (nome_funcionario,cpf,endereco,telefone,id_cargo,id_departamento)
+VALUES ('João','56714515104','Rua Alguma coisa','21912345678',2,3);
+
+INSERT INTO funcionarios (nome_funcionario,cpf,endereco,telefone,id_cargo,id_departamento)
+VALUES ('Carlos','98765432101','Rua Alguma coisa','21912345678',1,5);
+
+INSERT INTO funcionarios (nome_funcionario,cpf,endereco,telefone,id_cargo,id_departamento)
+VALUES ('Irineu','10293847560','Rua dos bobos','21912345678',6,7);

@@ -1,153 +1,87 @@
+# BIBLIOTECAS
 from essenciais.conexão import *
 from essenciais.extra import *
-from tabelas.cargo import *
-from tabelas.departamento import *
-from tabelas.funcionario import *
-from tabelas.banco_horas import * 
+from essenciais.criarbd import criarBD
+
+# GARANTINDO QUE O BANCO DE DADOS VAI EXISTIR
+criarBD()
 
 # Abrindo conexão com o banco de dados
 clear()
 conexão = abrirConexão()
-time.sleep(0.5)
+sleep(0.5)
 cursor = abrirCursor(conexão)
-time.sleep(0.85)
+sleep(0.85)
 clear()
 
 # Programa princiapl
 while(True):
     menuPrincipal()
-    operacao = input("Digite o numero da opção que deseja realizar(0-5): ")
+    operacao = input("Digite o numero da operação que deseja realizar(0-4): ")
     clear()
 
     # Opção para encerrar o programa principal.
     if(operacao == '0'):
         break
 
-    # Escolhendo a tabela para efetuar operação de Ver ou Modificar
-    elif(operacao == '1' or operacao == '3'):
-        while(True):
-            menuTabelas2()
-
-            if(operacao == '1'):
-                tabela = input("Ver os itens de qual tabela?\n(0-4): ")
-
-            elif(operacao == '3'):
-                tabela = input("Modificar itens de qual tabela?\n(0-4): ")
-
-            clear()
-#####################################################################################################
-        # Cancelando operacao escolhida e voltando para o menu principal
-            if(tabela == '0'):
-                break
-            
-        # VER INICIO
-            # DEPARTAMENTO
-            elif(operacao == '1' and tabela == '1'):
-                print("Departamentos:")
-                verDepartamento (cursor)
-                x = input()
-                if(x != None or x == None):
-                    None
-                clear()
-                
-            # CARGO
-            elif(operacao == '1' and tabela == '2'):
-                print("Cargos:")
-                verCargo(cursor)
-                x = input()
-                if(x != None or x == None):
-                    None
-                clear()
-
-            # FUNCIONARIO
-            elif(operacao == '1' and tabela == '3'):
-                print("Funcionarios:")
-                verFuncionario(cursor)
-                x = input()
-                if(x != None or x == None):
-                    None
-                clear()
-
-            elif(operacao == '1' and tabela == '4'):
-                print("Banco de Horas:")
-                ## verBancoDeHoras(cursor)
-                x = input()
-                if(x != None or x == None):
-                    None
-                clear()
-        # FIM VER
-    
-    # Escolhendo a tabela para efetuar operação de Criar ou Deletar
-    elif(operacao == '2'  or operacao == '4'):
+    # VER TABELAS
+    elif(operacao == '1'):
         while(True):
             menuTabelas()
-            # Aqui o usuario vai escolher a tabela para fazer a ação que havia escolhido
-            if(operacao == '2'):
-                tabela = input("Criar um novo item em qual tabela?\n(0-3): ")
-
-            elif(operacao == '4'):
-                tabela = input("Deletar itens de qual tabela?\n(0-3): ")
-
+            tabela = input("Digite o numero da tabela que deseja visualizar(0-3): ")
             clear()
-#####################################################################################################
+
+            # Cancelando operacao escolhida e voltando para o menu principal
             if(tabela == '0'):
                 break
+             
+            # VER DEPARTAMENTO
+            elif(tabela == '1'):
+                print("Departamentos")
+                print()
+                verDepartamentos(cursor)
+                x = input()
+                clear()
+                
+            # VER CARGO
+            elif(tabela == '2'):
+                print("Cargos")
+                print()
+                verCargos(cursor)
+                x = input()
+                clear()
 
-            # FUNÇÕES CRUD RELACIONADAS AS TABELAS 
-
-        # CRIAR INICIO
-            # DEPARTAMENTO
-            elif(operacao == '2' and tabela == '1'):
-                criarDepartamento(cursor,conexão)
-
-            # CARGO
-            elif(operacao == '2' and tabela == '2'):
-                criarCargo(cursor,conexão)
-
-            # FUNCIONARIO
-            elif(operacao == '2' and tabela == '3'):
-                print("Novo item em Funcionario")
-        # FIM CRIAR
-
-        # MODIFICAR INICIO
-            # DEPARTAMENTO
-            elif(operacao == '4' and tabela == '1'):
-                print("Modificar itens em Departamento")
-
-            # CARGO
-            elif(operacao == '4' and tabela == '2'):
-                print("Modificar itens em Cargo")
-
-            # FUNCIONARIO
-            elif(operacao == '4' and tabela == '3'):
-                print("Modificar itens em Funcionario")
-        #FIM MODIFICAR
-
-        # DELETAR INICIO
-            # DEPARTAMENTO
-            elif(operacao == '5' and tabela == '1'):
-                deletarDepartamento(cursor,conexão)
-
-            # CARGO
-            elif(operacao == '5' and tabela == '2'):
-                print("Deletar itens em Cargo")
-
-            # FUNCIONARIO
-            elif(operacao == '5' and tabela == '3'):
-                print("Deletar itens em Funcionario")
-        # FIM DELETAR
+            # VER FUNCIONARIO
+            elif(tabela == '3'):
+                print("Funcionarios")
+                print()
+                verFuncionarios(cursor)
+                x = input()
+                clear()
 
             else:
                 print("*Opção invalida, por favor escolha uma opção valida.")
+    
+    # CRIAR FUNCIONARIO
+    elif(operacao == '2'):
+        criarFuncionario(cursor,conexão)
 
+    # MODIFICAR FUNCIONARIO
+    elif(operacao == '3'):
+        modificarFuncionario(cursor,conexão)
+
+    # DELETAR FUNCIONARIO
+    elif(operacao == '4'):
+        deletarFuncionario(cursor,conexão)
+    
     # Caso o usuario digite um valor invalido
     else:
-        print("*Opção invalida, realocado para o menu principal")
+        print("*Opção invalida, por favor escolha uma opção valida.")
 
 # Fechando conexão com o banco de dados e encerrando o programa
 clear()
-time.sleep(0.85)
+sleep(0.85)
 fecharCursor(cursor)
-time.sleep(0.5)
+sleep(0.5)
 fecharConexão(conexão)
 print("\n\nF I M  D O  P R O G R A M A\n")

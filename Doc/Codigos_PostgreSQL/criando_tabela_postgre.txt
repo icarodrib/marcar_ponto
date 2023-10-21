@@ -1,24 +1,24 @@
 CREATE TABLE DEPARTAMENTO(
-id_departamento SERIAL PRIMARY KEY,
-nome_departamento VARCHAR(255) NOT NULL
+	id_departamento SERIAL PRIMARY KEY,
+	nome_departamento VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE CARGO (
-id_cargo SERIAL PRIMARY KEY,
-nome_cargo VARCHAR(255) NOT NULL,
-salario_cargo NUMERIC(10,2) NOT NULL
+	id_cargo SERIAL PRIMARY KEY,
+	nome_cargo VARCHAR(100) NOT NULL,
+	salario_cargo NUMERIC(10,2) NOT NULL
 );
 
 CREATE TABLE FUNCIONARIO (
-id_funcionario SERIAL PRIMARY KEY,
-nome_funcionario VARCHAR(255) NOT NULL,
-cpf VARCHAR(11) NOT NULL,
-endereco VARCHAR(255),
-telefone VARCHAR(11),
-id_cargo INT NOT NULL,
-id_departamento INT NOT NULL,
-FOREIGN KEY (id_cargo) REFERENCES CARGO (id_cargo),
-FOREIGN KEY (id_departamento) REFERENCES DEPARTAMENTO (id_departamento)
+	id_funcionario SERIAL PRIMARY KEY,
+	nome_funcionario VARCHAR(100) NOT NULL,
+	cpf VARCHAR(11) NOT NULL,
+	endereco VARCHAR(100),
+	telefone VARCHAR(11),
+	id_departamento INT NOT NULL,
+	id_cargo INT NOT NULL,
+	FOREIGN KEY (id_departamento) REFERENCES departamentos (id_departamento),
+	FOREIGN KEY (id_cargo) REFERENCES cargos (id_cargo)
 );
 
 CREATE TABLE PONTO (
