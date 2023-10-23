@@ -112,6 +112,9 @@ def criarFuncionario(cur,conn):
     print("| 4 | Comercial                       |")
     print("---------------------------------------")
     id_departamento = input("Digite o id do departamento: ")
+    cur.execute("SELECT nome_departamento FROM departamentos WHERE id_departamento = %s",(id_departamento))
+    resultado = cur.fetchall()
+    nome_departamento = resultado[0][0]
     clear()
 
     # ID CARGO
@@ -124,15 +127,18 @@ def criarFuncionario(cur,conn):
     print("| 4 | Supervisão                      |")
     print("---------------------------------------")
     id_cargo = input("Digite o id do cargo: ")
+    cur.execute("SELECT nome_cargo FROM cargos WHERE id_cargo = %s",(id_cargo))
+    resultado = cur.fetchall()
+    nome_cargo = resultado[0][0]
     clear()
 
     # FINALIZAÇÃO DA FUNÇÃO
     while(True):
         # CONFIRMAÇÃO DOS DADOS POR PARTE DO USUARIO
         print("Ordem dos dados:")
-        print("|  Nome  |  CPF  |  Endereço  |  Telefone  |  Id Departamento  |  Id Cargo  |")
+        print("|  Nome  |  CPF  |  Endereço  |  Telefone  |  Departamento  |  Cargo  |")
         print()
-        print("| ",nome_funcionario," | ",cpf," | ",endereco," | ",telefone," | ",id_departamento," | ",id_cargo," |")
+        print("| ",nome_funcionario," | ",cpf," | ",endereco," | ",telefone," | ",nome_departamento," | ",nome_cargo," |")
         print("")
         print("Tem certeza que deseja inserir o funcionario acima?")
         print("1) Sim\n0) Não")

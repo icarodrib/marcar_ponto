@@ -1,0 +1,1 @@
+INSERT INTO funcionarios(nome_funcionario,cpf,endereco,telefone,id_departamento,id_cargo) VALUES (%s,%s,%s,%s,%s,%s)

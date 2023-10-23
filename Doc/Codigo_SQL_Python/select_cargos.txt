@@ -1,0 +1,1 @@
+SELECT * FROM cargos ORDER BY id_cargo

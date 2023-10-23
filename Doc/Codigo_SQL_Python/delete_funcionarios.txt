@@ -1,0 +1,1 @@
+DELETE FROM funcionarios WHERE id_funcionario = %s;",(id_funcionario,)

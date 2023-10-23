@@ -1,0 +1,5 @@
+SELECT f.id_funcionario,f.nome_funcionario,f.cpf,f.endereco,f.telefone,d.nome_departamento,c.nome_cargo,c.salario_cargo
+        FROM funcionarios f
+        JOIN departamentos d ON f.id_departamento = d.id_departamento
+        JOIN cargos c ON f.id_cargo = c.id_cargo
+        ORDER BY f.id_funcionario

@@ -1,0 +1,1 @@
+SELECT * FROM departamentos ORDER BY id_departamento

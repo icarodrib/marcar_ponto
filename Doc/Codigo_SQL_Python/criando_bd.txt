@@ -1,0 +1,13 @@
+Selecionando para ver se já existe:
+
+SELECT 1 FROM pg_database WHERE datname = %s;", ("e-enterprise",)
+
+
+
+Criando de fato:
+
+Em Python com pyscopg2:
+("CREATE DATABASE {}").format(sql.Identifier("e-enterprise"))
+
+traduzindo para SQL:
+CREATE DATABASE "e-enterprise"
